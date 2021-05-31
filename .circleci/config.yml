@@ -7,6 +7,8 @@ jobs:
     steps:
       - checkout
 
+      - run: ls -la
+
       - restore_cache:
           keys:
             - deps-{{ checksum "~/work/calcdemo/poetry.lock" }}
