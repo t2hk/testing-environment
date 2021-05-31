@@ -15,8 +15,8 @@ jobs:
             - deps-{{ checksum "~/project/work/calcdemo/poetry.lock" }}
 
       - run:
-          working_directory: ~/project/work/calcdemo/
           name: Install Dependencies
+          working_directory: ~/project/work/calcdemo/
           command: poetry install
 
       - save_cache:
@@ -26,6 +26,7 @@ jobs:
 
       - run:
           name: Exec pytest
+          working_directory: ~/project/work/calcdemo/
           command: |
             poetry run pytest
             source $(find . -name circleci-poetry*)/bin/activate
