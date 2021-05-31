@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directoyr: ~/work/calcdemo
+    working_directory: ~/work/calcdemo
     docker:
       - image: circleci/python:3.9.5
     steps:
