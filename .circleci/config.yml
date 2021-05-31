@@ -11,6 +11,7 @@ jobs:
            pwd
            ls -la
            ls -la work
+           cd work/calcdemo
 
       - restore_cache:
           keys:
