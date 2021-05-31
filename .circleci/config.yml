@@ -29,3 +29,6 @@ jobs:
           working_directory: ~/project/work/calcdemo/
           command: |
             poetry run pytest -v ./tests/* --cov=. --cov-report=html
+
+      - store_artifacts:
+          path: htmlcov
