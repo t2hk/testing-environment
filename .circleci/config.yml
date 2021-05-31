@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /work/calcdemo
+    working_directory: ~/work/calcdemo
     docker:
       - image: circleci/python:3.9.5
     steps:
@@ -9,7 +9,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - deps-{{ checksum "poetry.lock" }}
+            - deps-{{ checksum "~/work/calcdemo/poetry.lock" }}
 
       - run:
           name: Install Dependencies
@@ -18,7 +18,7 @@ jobs:
             poetry install
 
       - save_cache:
-          key: deps-{{ checksum "poetry.lock" }}
+          key: deps-{{ checksum "~/work/calcdemo/poetry.lock" }}
           paths:
             - .
 
