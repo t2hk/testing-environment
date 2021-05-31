@@ -28,4 +28,4 @@ jobs:
           name: Exec pytest
           working_directory: ~/project/work/calcdemo/
           command: |
-            poetry run pytest -v ./test/* --cov=. --cov-report=html
+            poetry run pytest -v ./tests/* --cov=. --cov-report=html
