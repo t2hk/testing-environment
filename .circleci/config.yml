@@ -12,7 +12,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - deps-{{ checksum "poetry.lock" }}
+            - deps-{{ checksum "work/calcdemo/poetry.lock" }}
 
       - run:
           working_directory: ~/work/calcdemo/
@@ -20,9 +20,9 @@ jobs:
           command: poetry install
 
       - save_cache:
-          key: deps-{{ checksum "poetry.lock" }}
+          key: deps-{{ checksum "work/calcdemo/poetry.lock" }}
           paths:
-            - ./
+            - ./work/calcdemo/
 
       - run:
           name: Exec pytest
