@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directoyr: ~/work/calcdemo
+    docker:
+      - image: circleci/python:3.9.5
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - deps-{{ checksum "poetry.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: |
+            poetry config virtualenvs.path ~/work/calcdemo/
+            poetry install
+
+      - save_cahce:
+          key: deps-{{ checksum "poetry.lock" }}
+          paths:
+            - .
+
+      - run:
+          name: Exec pytest
+          command: |
+            poetry run pytest
+            source $(find . -name circleci-poetry*)/bin/activate
+            pytest
