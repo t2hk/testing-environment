@@ -28,6 +28,4 @@ jobs:
           name: Exec pytest
           working_directory: ~/project/work/calcdemo/
           command: |
-            poetry run pytest
-            source $(find . -name circleci-poetry*)/bin/activate
-            pytest
+            poetry run pytest -v ./test/* --cov=. --cov-report=html
