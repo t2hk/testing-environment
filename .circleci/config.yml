@@ -6,9 +6,6 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          working_directory: ~/work/calcdemo/
-
       - run: |
            pwd
            ls -la
@@ -18,6 +15,7 @@ jobs:
             - deps-{{ checksum "poetry.lock" }}
 
       - run:
+          working_directory: ~/work/calcdemo/
           name: Install Dependencies
           command: poetry install
 
