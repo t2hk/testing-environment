@@ -18,7 +18,7 @@ jobs:
       - save_cache:
           key: deps-{{ checksum "~/work/calcdemo/poetry.lock" }}
           paths:
-            - .
+            - ~/work/calcdemo 
 
       - run:
           name: Exec pytest
