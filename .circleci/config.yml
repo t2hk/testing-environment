@@ -13,9 +13,7 @@ jobs:
 
       - run:
           name: Install Dependencies
-          command: |
-            poetry config virtualenvs.path ~/
-            poetry install
+          command: poetry install
 
       - save_cache:
           key: deps-{{ checksum "~/work/calcdemo/poetry.lock" }}
