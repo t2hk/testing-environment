@@ -6,19 +6,10 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - deps-{{ checksum "~/project/work/calcdemo/poetry.lock" }}
-
       - run:
           name: Install Dependencies
           working_directory: ~/project/work/calcdemo/
           command: poetry install
-
-      - save_cache:
-          key: deps-{{ checksum "~/project/work/calcdemo/poetry.lock" }}
-          paths:
-            - ~/project/work/calcdemo/
 
       - run:
           name: Exec pytest
