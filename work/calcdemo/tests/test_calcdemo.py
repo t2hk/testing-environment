@@ -26,4 +26,6 @@ def test_div_02():
     with pytest.raises(ZeroDivisionError):
         Calc(9, 0).div()
 
+def test_exp_01():
+    assert Calc(2, 3).exp() == 8
 

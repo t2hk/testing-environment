@@ -24,6 +24,7 @@ jobs:
           command: |
             ls -la
             cp -r htmlcov /tmp/
+          when: always
             
       - store_artifacts:
           path: /tmp/htmlcov
