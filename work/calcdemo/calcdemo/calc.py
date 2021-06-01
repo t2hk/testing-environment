@@ -19,4 +19,4 @@ class Calc:
         return self.a / self.b
 
     def exp(self):
-        return 0
+        return self.a ** self.b
