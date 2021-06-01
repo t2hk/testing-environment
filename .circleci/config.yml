@@ -16,9 +16,7 @@ jobs:
           working_directory: ~/project/work/calcdemo/
           command: |
             poetry run pytest --cov=. --cov-report=html
-            ls -la
             cp -r htmlcov /tmp/
-            ls -la /tmp/
 
       - store_artifacts:
           path: /tmp/htmlcov
