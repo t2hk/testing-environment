@@ -9,7 +9,6 @@ def test_version():
 def test_add_01():
     assert Calc(9,2).add() == 11
 
-
 def test_add_02():
     assert Calc(-9, 2).add() == -7
 
@@ -26,4 +25,5 @@ def test_div_02():
     with pytest.raises(ZeroDivisionError):
         Calc(9, 0).div()
 
-
+def test_exp_01():
+    assert Calc(2, 3).exp() == 8
