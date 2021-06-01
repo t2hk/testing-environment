@@ -13,5 +13,5 @@
 
 3. run pytest by poetry
   ```
-  poetry run pytest -v ./tests/* --cov-report=term-missing --cov=calcdemo 
+  poetry run pytest --cov-report=term-missing --cov=calcdemo 
   ```
