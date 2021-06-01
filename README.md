@@ -11,7 +11,12 @@
   docker-compose exec python3 bash
   ```
 
-3. run pytest by poetry
+3. poetry update
   ```
-  poetry run pytest -v ./tests/* --cov-report=term-missing --cov=calcdemo 
+  poetry update
+  ```
+
+4. run pytest by poetry
+  ```
+  poetry run pytest --cov-report=html --cov=calcdemo 
   ```
