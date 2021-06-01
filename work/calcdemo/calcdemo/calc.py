@@ -17,3 +17,6 @@ class Calc:
            raise ZeroDivisionError
 
         return self.a / self.b
+
+    def exp(self):
+        return 0
